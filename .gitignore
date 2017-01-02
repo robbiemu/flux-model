@@ -1,3 +1,7 @@
+./node_modules/
+./**/node_modules/
+!./flux/node_modules/node-uuid/uuid.js
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
