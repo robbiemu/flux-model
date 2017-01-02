@@ -5,6 +5,7 @@ docReady(function () {
   let model = new Model()
     
   const LeftKey = Symbol.for('App.Controller.Left')
+  const RightKey = Symbol.for('App.Controller.Right')
 
   window[LeftKey] = new Vue({
     el: '#left',
@@ -15,7 +16,7 @@ docReady(function () {
     watch: {
       isPrime: function (boolean) {
         console.log('[left] isPrime: ' + boolean)
-        window[this.RightKey].isPrime=boolean
+        window[RightKey].isPrime=boolean
       }
     },
     methods: {
@@ -27,6 +28,5 @@ docReady(function () {
       }
     }
   })
-  window[LeftKey].RightKey = Symbol.for('App.Controller.Right')
 
 })

@@ -6,7 +6,8 @@ docReady(function () {
   let model = new Model()
   
   const RightKey = Symbol.for('App.Controller.Right')
-
+  const LeftKey = Symbol.for('App.Controller.Left')
+  
   window[RightKey] = new Vue({
     el: '#right',
     data: {
@@ -16,7 +17,7 @@ docReady(function () {
     watch: {
       isPrime: function (boolean) {
         console.log('[right] isPrime: ' + boolean)
-        window[this.LeftKey].isPrime = boolean
+        window[LeftKey].isPrime = boolean
       }
     },
     methods: {
@@ -27,7 +28,6 @@ docReady(function () {
         model.updateRight(this, 'decrement')
       }
     },
-
   })
-  window[RightKey].LeftKey = Symbol.for('App.Controller.Left')
+  
 })
